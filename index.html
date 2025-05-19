@@ -1,1 +1,65 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="TM.css">
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500 font-sans min-h-screen">
+    <div class="container mx-auto p-6 max-w-lg">
+        <!-- Animation Section -->
+        <div class="working-animation mb-6 flex justify-center">
+            <svg id="working-person" width="200" height="200" viewBox="0 0 200 200">
+                <rect x="50" y="120" width="100" height="60" fill="#4a5568" class="desk" />
+                <circle cx="100" cy="80" r="20" fill="#f7fafc" class="head" />
+                <path d="M80,100 C80,120 120,120 120,100" fill="#2d3748" class="body" />
+                <path id="arm" d="M90,100 L80,120" stroke="#2d3748" stroke-width="5" class="arm" />
+                <rect x="90" y="120" width="20" height="10" fill="#718096" class="laptop" />
+            </svg>
+        </div>
+        
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Task Manager</h1>
+        
+       
+        <form id="task-form" class="mb-6">
+            <div class="flex space-x-2">
+                <input type="text" id="task-input" class="flex-1 p-2 border rounded" placeholder="Add a new task..." required>
+                <input type="date" id="due-date" class="p-2 border rounded">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add</button>
+            </div>
+        </form>
+        
+       
+        <div class="flex justify-between mb-6">
+            <div class="flex space-x-2">
+                <button id="share-gmail" class="bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600" title="Share via Gmail">Gmail</button>
+                <button id="share-whatsapp" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600" title="Share via WhatsApp">WhatsApp</button>
+                <button id="share-x" class="bg-gray-800 text-white px-3 py-2 rounded hover:bg-gray-900" title="Share via X">X</button>
+                <button id="share-link" class="bg-purple-500 text-white px-3 py-2 rounded hover:bg-purple-600" title="Copy Page Link">Link</button>
+            </div>
+            <button id="clear-completed" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Clear Completed</button>
+        </div>
+        
+        
+        <div class="flex justify-center space-x-4 mb-6">
+            <button class="filter-btn bg-gray-200 px-4 py-2 rounded hover:bg-gray-300" data-filter="all">All</button>
+            <button class="filter-btn bg-gray-200 px-4 py-2 rounded hover:bg-gray-300" data-filter="active">Active</button>
+            <button class="filter-btn bg-gray-200 px-4 py-2 rounded hover:bg-gray-300" data-filter="completed">Completed</button>
+        </div>
+        <p id="task-counter" class="text-gray-800 mb-4 text-center"></p>
+        
+        
+        <ul id="task-list" class.asc files and then make a copy of it to your local machine. 
+        <ul id="task-list" class="space-y-2 mb-6"></ul>
+        
+        
+        <div class="timeline bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Task Timeline</h2>
+            <div id="timeline-content" class="space-y-4"></div>
+        </div>
+    </div>
+    <script src="TM.js"></script>
+</body>
+</html>
