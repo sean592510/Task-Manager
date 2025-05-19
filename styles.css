@@ -1,0 +1,85 @@
+/* Task List Styles */
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+#task-list li.new {
+    opacity: 0;
+}
+
+#task-list li.completed {
+    background-color: #e5e7eb;
+    text-decoration: line-through;
+}
+
+#task-list li.completed input[type="checkbox"] {
+    accent-color: green;
+}
+
+#task-list input[type="text"]:not([readonly]) {
+    border: 1px solid #2563eb;
+    background-color: white;
+}
+
+/* Focus States */
+button:focus, input:focus {
+    outline: none;
+    ring: 2px solid #2563eb;
+}
+
+/* Timeline Styles */
+.timeline-event {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #2563eb;
+    border-radius: 50%;
+}
+
+.timeline-event::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    width: 2px;
+    height: calc(100% - 10px);
+    background-color: #d1d5db;
+}
+
+
+@keyframes armMove {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-10deg); }
+}
+
+.arm {
+    transform-origin: 90px 100px;
+    animation: armMove 2s infinite;
+}
+
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+    .working-animation svg {
+        width: 150px;
+        height: 150px;
+    }
+}
