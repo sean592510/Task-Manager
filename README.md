@@ -1,5 +1,5 @@
 # Task-Manager
-A Interactive app for organizing chores
+A Interactive app for organizing Everyday Chores and work related Tasks
 
 # Features
 Add,delete tasks
